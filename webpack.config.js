@@ -11,7 +11,6 @@ var webpack = require('webpack'),
 
 const BROWSER_MANIFEST = {
   chrome: 'src/manifest-chrome.json',
-  firefox: 'src/manifest-firefox.json',
 };
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
@@ -46,13 +45,6 @@ var options = (args) => {
     mode: process.env.NODE_ENV || 'development',
     entry: {
       options: path.join(__dirname, 'src', 'pages', 'Options', 'index.ts'),
-      background: path.join(
-        __dirname,
-        'src',
-        'pages',
-        'Background',
-        'index.ts'
-      ),
       contentScript: path.join(
         __dirname,
         'src',
@@ -62,7 +54,7 @@ var options = (args) => {
       ),
     },
     chromeExtensionBoilerplate: {
-      notHotReload: ['background', 'contentScript'],
+      notHotReload: ['contentScript'],
     },
     output: {
       path: path.resolve(__dirname, 'build'),
@@ -168,12 +160,6 @@ var options = (args) => {
         template: path.join(__dirname, 'src', 'pages', 'Options', 'index.html'),
         filename: 'options.html',
         chunks: ['options'],
-        cache: false,
-      }),
-      new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'src', 'pages', 'Popup', 'index.html'),
-        filename: 'popup.html',
-        chunks: ['popup'],
         cache: false,
       }),
       new webpack.DefinePlugin({

@@ -1,7 +1,7 @@
 {
-  "name": "canvas-task-extension",
+  "name": "canvas-tasks",
   "version": "1.3.8",
-  "description": "A chrome extension that improves the Canvas LMS To Do sidebar!",
+  "description": "Just the to-do sidebar for Canvas. No account, no themes, no tracking.",
   "homepage": "https://github.com/jtcheng26/canvas-task-extension",
   "license": "MIT",
   "repository": {
@@ -14,14 +14,11 @@
   },
   "scripts": {
     "build": "node utils/build.js chrome",
-    "firefox": "node utils/build.js firefox",
     "zip": "cd build; zip -r ../build.zip * -x \"build/.*\" -x \"build/__MACOSX\"",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,html}'",
     "lint": "eslint src/**/*.ts src/**/*.tsx",
-    "test": "jest",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "jest"
   },
   "dependencies": {
     "@types/react": "^16.9.53",
@@ -42,14 +39,6 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@hot-loader/react-dom": "^17.0.1",
-    "@storybook/addon-actions": "^7.6.6",
-    "@storybook/addon-console": "^2.0.0",
-    "@storybook/addon-essentials": "^7.6.6",
-    "@storybook/addon-interactions": "^7.6.6",
-    "@storybook/addon-links": "^7.6.6",
-    "@storybook/react": "^7.6.6",
-    "@storybook/react-webpack5": "^7.6.6",
-    "@storybook/testing-library": "^0.2.2",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^7.0.1",
@@ -81,8 +70,6 @@
     "prettier": "^2.1.2",
     "sinon-chrome": "^3.0.1",
     "source-map-loader": "^1.1.2",
-    "storybook": "^7.6.6",
-    "storybook-dark-mode": "^3.0.3",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.2",
     "timezone-mock": "^1.2.1",

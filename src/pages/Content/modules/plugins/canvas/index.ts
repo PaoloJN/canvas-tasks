@@ -8,7 +8,6 @@ import { CanvasEntryPoint, isCanvas } from './detectCanvas';
 import { LMSConfig } from '../../types/config';
 import markAssignmentCanvas from './utils/markAssignment';
 import onCoursePageCanvas from './utils/onCoursePage';
-import { InstallSettingsEntryPoint, isInstallSettings } from './detectSettings';
 import { DEFAULT_ICON_SET } from '../shared/icons';
 
 const useCanvasAssignments = makeUseAssignments(loadCanvas);
@@ -28,6 +27,3 @@ export const CanvasLMSConfig: LMSConfig = {
 };
 
 export const CanvasLMSEntrypoint = CanvasEntryPoint;
-
-export const InstallSettingsEntrypoint = InstallSettingsEntryPoint;
-export { isInstallSettings };

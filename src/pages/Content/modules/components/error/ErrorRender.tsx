@@ -29,7 +29,7 @@ export default function ErrorRender({
       <br />
       {failureMessage}
       <ErrorDiv>{error.message}</ErrorDiv>
-      <SupportLink href={HOME_WEBSITE + '/support?ref=canvas'} target="_blank">
+      <SupportLink href={HOME_WEBSITE + '/issues'} target="_blank">
         {supportText}
       </SupportLink>
     </ErrorWrapper>

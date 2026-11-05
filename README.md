@@ -1,61 +1,35 @@
-# Tasks Browser Extension for Canvas Instructure
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R8FV70G)
+# Canvas Tasks (mine)
 
-Ever had trouble finding your weekly assignments? Wish you had a nice progress bar to motivate you to complete everything?
+A stripped-down fork of [Tasks for Canvas](https://github.com/UseBetterCanvas/canvas-task-extension) v1.4.0,
+the last version before it was merged into BetterCampus.
 
-No? Well either way, the **Tasks Browser Extension for Canvas** is here to help!
+Just the to-do sidebar on the Canvas dashboard. Nothing else.
 
-## Download
-[![Download for Chrome](https://img.shields.io/badge/Download_for-Chrome-4c8bf5?style=for-the-badge&logo=Googlechrome)](https://chrome.google.com/webstore/detail/tasks-for-canvas/kabafodfnabokkkddjbnkgbcbmipdlmb)
-[![Download for Firefox](https://img.shields.io/badge/Download_for-Firefox-ff9400?style=for-the-badge&logo=Firefoxbrowser&logoColor=White)](https://addons.mozilla.org/en-US/firefox/addon/tasks-for-canvas)<br>
-Edge, Opera, and Vivaldi are compatible with the Chrome version.
-## Features
+Removed from the original:
 
-### Stay on Track
+- Google / BetterCanvas account login (never existed in this version, and never will)
+- remote "experiments" config fetch on every page load
+- install / uninstall tracking URLs
+- Blackboard, Brightspace and Gradescope support
+- popup, Firefox build, storybook, CI
+- running on every `https://` site: now only `*.instructure.com`
 
-Colorful task items ensure that you'll never miss an assignment again.
+## Build
 
-![](screenshots/Screenshot1.png)
+```
+npm install
+npm run build
+```
 
-### Track Your Progress
+Then `chrome://extensions` → Developer mode → Load unpacked → pick the `build/` folder.
 
-Visual progress bars for each of your courses show how far you are in completing your assignments this week.
+If your school's Canvas is on a custom domain (not `*.instructure.com`), add it to
+`matches` in `src/manifest-chrome.json` and rebuild.
 
-![](screenshots/Screenshot2.png)
+## Test
 
-### Make It Your Own
+```
+npx jest
+```
 
-Task items and progress bars correspond with your chosen dashboard colors and positions.
-
-![](screenshots/Screenshot3.png)
-
-### Notes
-
-- The sidebar only works in Card View and Recent Activity.
-- Only courses that have assignments will appear in the chart.
-  - Alternatively, you can choose to show all dashboard courses in the options page.
-    - To change your dashboard courses, go to **Courses** in the left sidebar, go to **All Courses** and star the classes that you want on your dashboard.
-- The **Unfinished** assignments list will show all assignments from the dashboard courses that are both unsubmitted and ungraded or have a grade of 0.
-
-## Installing and Running for Development
-
-### Procedures:
-
-1. Check if your [Node.js](https://nodejs.org/) version is >= **10.13**.
-2. Clone this repository.
-3. Run `npm install` to install the dependencies.
-4. Run `npm start`
-5. If on Chrome: Load the extension following:
-   1. Access `chrome://extensions/`
-   2. Check `Developer mode`
-   3. Click on `Load unpacked extension`
-   4. Select the `build` folder.
-5. If on Firefox: Load the extension following:
-   1. Copy `canvas-task-extension-main/src/manifest-firefox.json` to `canvas-task-extension-main/build/manifest.json`
-   2. Access `about:debugging`
-   3. Click on `This Firefox`
-   4. Click `Load Temporary Add-on`
-   5. Select the `build` folder and click on `manifest.json`
-7. Happy hacking.
-
-Built with [Chrome Extension Boilerplate with React 17 and Webpack 5](https://github.com/lxieyang/chrome-extension-boilerplate-react.git)
+MIT, same as the original.

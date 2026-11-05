@@ -13,11 +13,7 @@ export const THEME_COLOR_LIGHT = 'rgba(199, 205, 209)';
 
 export const CLIENT_ID_LENGTH = 9;
 
-export const HOME_WEBSITE = 'https://www.tasksforcanvas.info';
-export const UNINSTALL_URL = 'https://www.tasksforcanvas.info/uninstall';
-export const INSTALL_URL = 'https://www.tasksforcanvas.info/getting-started';
-export const EXPERIMENT_CONFIG_URL =
-  'https://canvas-task-static.onrender.com/live.json';
+export const HOME_WEBSITE = 'https://github.com/PaoloJN/canvas-tasks';
 
 // for platforms that don't have dashboard colors by default
 export const DEFAULT_DASHBOARD_COLORS = [
