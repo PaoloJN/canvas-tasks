@@ -1,18 +1,18 @@
-# Canvas Tasks (mine)
+# Blackboard Tasks (mine)
 
 A stripped-down fork of [Tasks for Canvas](https://github.com/UseBetterCanvas/canvas-task-extension) v1.4.0,
 the last version before it was merged into BetterCampus.
 
-Just the to-do sidebar on the Canvas dashboard. Nothing else.
+Just the to-do sidebar on the Blackboard (Ultra) dashboard. Nothing else. Canvas still works too.
 
 Removed from the original:
 
 - Google / BetterCanvas account login (never existed in this version, and never will)
 - remote "experiments" config fetch on every page load
 - install / uninstall tracking URLs
-- Blackboard, Brightspace and Gradescope support
+- Brightspace and Gradescope support
 - popup, Firefox build, storybook, CI
-- running on every `https://` site: now only `*.instructure.com`
+- running on every `https://` site: now only `bb-montgomerycollege.blackboard.com`
 
 ## Build
 
@@ -23,8 +23,7 @@ npm run build
 
 Then `chrome://extensions` → Developer mode → Load unpacked → pick the `build/` folder.
 
-If your school's Canvas is on a custom domain (not `*.instructure.com`), add it to
-`matches` in `src/manifest-chrome.json` and rebuild.
+To use it on a different school, change `matches` in `src/manifest-chrome.json` and rebuild.
 
 ## Test
 

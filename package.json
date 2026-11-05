@@ -1,7 +1,7 @@
 {
   "name": "canvas-tasks",
   "version": "1.3.8",
-  "description": "Just the to-do sidebar for Canvas. No account, no themes, no tracking.",
+  "description": "Just the to-do sidebar for Blackboard. No account, no themes, no tracking.",
   "homepage": "https://github.com/jtcheng26/canvas-task-extension",
   "license": "MIT",
   "repository": {

@@ -1,25 +1,38 @@
 {
   "manifest_version": 3,
-  "name": "Canvas Tasks (mine)",
-  "description": "Just the to-do sidebar for Canvas. No account, no themes, no tracking.",
+  "name": "Blackboard Tasks (mine)",
+  "description": "Just the to-do sidebar for Blackboard. No account, no themes, no tracking.",
   "version": "1.4.0",
   "options_page": "options.html",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "icons": {
     "128": "icon-128.png"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.instructure.com/*"],
-      "js": ["contentScript.bundle.js"],
-      "css": ["content.styles.css"],
+      "matches": [
+        "https://bb-montgomerycollege.blackboard.com/*"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ],
       "all_frames": false
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["icon-128.png", "options.html"],
-      "matches": ["https://*.instructure.com/*"]
+      "resources": [
+        "icon-128.png",
+        "options.html"
+      ],
+      "matches": [
+        "https://bb-montgomerycollege.blackboard.com/*"
+      ]
     }
   ],
   "content_security_policy": {
